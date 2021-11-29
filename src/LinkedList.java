@@ -1,26 +1,23 @@
 
 public class LinkedList {
-	Node first;
-	String customer;
+	private Node first; 
+	public LinkedList() {
+		first =null;
+	}
 	public boolean isEmpty() {
-		if(customer==null)
+		if (first==null)
 			return true;
 		else
 			return false;
 	}
-	public void insertAtBack(String customer)
-	{
-		Node newNode=new Node(customer);
-		Node current=first;
-		if(!isEmpty())
-		{
-		while(current.next!=null)
-		{
-			current=current.next;
-		}
-		current.next=newNode;
-		}
-		else
+	public void insertAtBack(String a) {
+		Node current = first;
+		Node newNode = new Node(a);
+		if (!isEmpty()) {
+			while(current.next!=null)
+				current=current.next;
+			current.next=newNode;
+		}else
 			first=newNode;
 	}
 	public String deleteFromFront()
@@ -33,15 +30,13 @@ public class LinkedList {
 		}
 		return null;
 	}
-	public void display(){
-		Node n = first;
-		int count=0;
-		System.out.println("The number of people currently waiting for rental is: ");
-		while(n!=null){
-			//System.out.println(n.data);
-			n = n.next;
-			count++;
+	public void display() {
+		Node current = first;
+		while(current!=null) {
+			System.out.println(current.data);
+			System.out.println();
+			current=current.next;
 		}
-		System.out.println(count);	
+		
 	}
 }

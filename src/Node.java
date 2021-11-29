@@ -1,19 +1,17 @@
 
 public class Node {
 	String data;
-	Node next;
-	
-	public Node() {
-		data=null;
-		next=null;
-	}
-	
-	public Node(String car) {
-		data=car;
-		next=null;
-	}
-
+	Node next; 
+	Cars car;
 	public Node(Cars car) {
 		
 	}
+	public Node() {
+		
+	}
+	public Node (String data) {
+		this.data=data;
+		next=null;
+	}
+	
 }
