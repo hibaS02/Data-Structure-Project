@@ -7,6 +7,7 @@ public class Shop {
 	static Node node;
 	static LinkedList ll = new LinkedList();
 	CustomerInfo CI = new CustomerInfo();
+	CustomerList cL= new CustomerList();
 	//Each node refers to a car
 	
 	
@@ -42,31 +43,41 @@ public class Shop {
 		node=ll.deleteAtIndex(carNumber-1);
 	}
 	public void WelcomeNote() {
-		System.out.println("Welcome to Rent A Car! \nWhere we have a wide variety of cars to pamper yourself with:");
-		System.out.println("Please note that all our prices are in USD/day: \n");
-		System.out.println("Would you like to rent now?");
-		String ans= input.next();
-		String y="yes";
-		String n="no";
-		OurCars();
-		ll.display();
-		if(ans.equals(n)) {
-			System.out.println("Thank you for visting our shop! Have a look around.");
-			
-		}else if(ans.equals(y)) {
-			System.out.println("Take a look at our available cars!");
-			//display the cars and let the customer choose
-			
-			chooseCar(); 
-			ll.display();
-			System.out.println("Rental form");
-			//take customerInfo
-			CI.customer();
-			reciept();
-		}
 		
-		if(isEmpty())
-			System.out.println("We are closed today!");
+			System.out.println("Welcome to Rent A Car! \nWhere we have a wide variety of cars to pamper yourself with:");
+			System.out.println("Please note that all our prices are in USD/day: \n");
+			System.out.println("Would you like to rent now?");
+			String ans= input.next();
+			String y="yes";
+			String n="no";
+			
+			if(ans.equals(n)) {
+				System.out.println("Thank you for visting our shop! Have a look around.");
+				OurCars();
+				ll.display();
+			}else if(ans.equals(y)) {
+				System.out.println("Take a look at our available cars!"); 
+				OurCars();
+				ll.display();
+				chooseCar(); 
+				System.out.println("Rental form");
+				
+				try   { 
+					//create customer object
+					Object nC= CI.customer();
+					//enqueue customer object to node 
+					cL.enqueue(String.valueOf(nC));
+					//cL.display();
+		        } 
+		        catch(NullPointerException e)   { 
+		            System.out.print("Caught NullPointerException"); 
+		        } 
+			 }
+			reciept();
+			if(isEmpty())
+				System.out.println("We are closed today!");
+		
+		
 	}
 	public boolean isEmpty() {
 		if (Cars.counter==0) 
@@ -76,10 +87,12 @@ public class Shop {
 	public void reciept() {
 		System.out.println("\nRent A Car");
 		CI.display();
-		System.out.println("Car Details: "+node.data);
+		System.out.println();
+		System.out.println("Car Details \nCar Number: "+node.data);
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
 	    Date date = new Date();  
-		System.out.print("Date: "+formatter.format(date));
+		System.out.println("\nDate: "+formatter.format(date)+"\n");
+		System.out.println("!Customer Reciept Copy!\n");
 		
 	}
 

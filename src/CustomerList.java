@@ -20,5 +20,6 @@ public class CustomerList extends LinkedList {
 	}
 	public void display(){
 		super.display();
+		
 	}
 }
