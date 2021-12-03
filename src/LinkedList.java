@@ -30,6 +30,25 @@ public class LinkedList {
 		}
 		return null;
 	}
+	public Node deleteAtIndex(int carNumber) {
+		 Node temp = first;
+		if (first == null)
+            return null;
+        if (carNumber == 0)
+        {
+            first = temp.next;  
+            return null;
+        }
+        if(temp!=null) {
+	        for (int i=0;i<carNumber-1; i++)
+	            temp = temp.next;
+        }
+        if (temp == null || temp.next == null)
+            return null;
+        Node next = temp.next.next;
+        temp.next = next; 
+        return temp;
+	}
 	public void display() {
 		Node current = first;
 		while(current!=null) {

@@ -5,6 +5,7 @@ public class Cars {
 	String color;
 	int carModel;
 	int rentPrice;
+	static int counter;
 	
 	public Cars() {
 		carType="";
@@ -12,6 +13,7 @@ public class Cars {
 		color="";
 		carModel=0;
 		rentPrice=0;
+		counter++;
 	}
 	public Cars(String cT, String cB, String color,int cM, int rP) {
 		this.carType = cT;
@@ -19,6 +21,7 @@ public class Cars {
 		this.color = color;
 		this.carModel = cM;
 		this.rentPrice = rP;
+		counter++;
 	}
 	
 	public String getCategory() {
