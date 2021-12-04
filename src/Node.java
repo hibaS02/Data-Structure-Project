@@ -6,7 +6,6 @@ public class Node {
 	public Node(Cars car) {
 		
 	}
-	
 	public Node() {
 		
 	}
@@ -14,5 +13,5 @@ public class Node {
 		this.data=data;
 		next=null;
 	}
-	
+	 
 }

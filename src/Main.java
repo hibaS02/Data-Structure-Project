@@ -6,8 +6,10 @@ public class Main {
 		
 	
 		Shop shop = new Shop();
+		shop.OurCars();
+		
 		shop.WelcomeNote();
-		shop.WelcomeNote();
+		//shop.WelcomeNote();
 		
 	}
 
