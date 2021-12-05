@@ -5,6 +5,7 @@ public class Shop {
 	Scanner input = new Scanner(System.in);
 
 	static Node node;
+	static Node node1;
 	static LinkedList ll = new LinkedList();
 	CustomerInfo CI = new CustomerInfo();
 	CustomerList cL= new CustomerList();
@@ -69,13 +70,13 @@ public class Shop {
 			
 			if(isEmpty())
 				System.out.println("We are closed today!");
-		
-		
+				
 	}
 	public void chooseCar() {
 		System.out.println("Enter the number of the car that you want:");
 		int carNumber = input.nextInt();
-		node=ll.deleteAtIndex(carNumber-1);
+		node = ll.deleteAtIndex(carNumber-1);
+		
 	}
 
 	public boolean isEmpty() {

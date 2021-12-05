@@ -7,7 +7,8 @@ public class Main {
 	
 		Shop shop = new Shop();
 		shop.OurCars();
-		
+		//shop.chooseCar();
+		//shop.reciept();
 		shop.WelcomeNote();
 		//shop.WelcomeNote();
 		

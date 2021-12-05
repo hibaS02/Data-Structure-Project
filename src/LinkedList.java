@@ -43,11 +43,30 @@ public class LinkedList {
 	            temp = temp.next;
        }
        if (temp == null || temp.next == null)
-           return null;
+           return null;  
        Node next = temp.next.next;
        temp.next = next; 
        return temp;
 	}
+	public void insertAtPosition(int position, String data)
+    {
+        Node node=new Node(data);
+    	node.data=data;
+    	node.next=null;
+    	if(position==0) {
+    		node.next=first;
+    		first=node;
+    	}
+    	
+    	else {
+    	Node n=first;
+    	for(int j=1;j<position-1;j++) {
+    		n=n.next;
+    	}
+    	node.next=n.next;
+    	n.next=node;
+    	}
+    }
 	public void display() {
 		Node current = first;
 		while(current!=null) {

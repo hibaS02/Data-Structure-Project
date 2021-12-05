@@ -55,7 +55,7 @@ public class Cars {
 		this.rentPrice = rP;
 	}
 	public String toString() {
-		return "Car type: "+carType+"\nBrand: "+carBrand+"\nColor: "+color+"\nModel: "+carModel+"\nRental price: "+rentPrice;
+		return "Car type: "+carType+"\nBrand: "+carBrand+"\nColor: "+color+"\nModel: "+carModel+"\nRental price: "+rentPrice+"$";
 	}
 	
 }
